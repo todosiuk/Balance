@@ -6,7 +6,10 @@ public class PBalances {
 	private Integer idPBalance;
 
 	// always contain 8 digits
-	private String pVendorCode;
+	private String pArticle;
+
+	// article title
+	private String pTitleArticle;
 
 	// quantity measured in square meters or pieces
 	private double pQuantity;
@@ -19,14 +22,6 @@ public class PBalances {
 		this.idPBalance = idPBalance;
 	}
 
-	public String getpVendorCode() {
-		return pVendorCode;
-	}
-
-	public void setpVendorCode(String pVendorCode) {
-		this.pVendorCode = pVendorCode;
-	}
-
 	public double getpQuantity() {
 		return pQuantity;
 	}
@@ -34,4 +29,21 @@ public class PBalances {
 	public void setpQuantity(double pQuantity) {
 		this.pQuantity = pQuantity;
 	}
+
+	public String getpArticle() {
+		return pArticle;
+	}
+
+	public void setpArticle(String pArticle) {
+		this.pArticle = pArticle;
+	}
+
+	public String getpTitleArticle() {
+		return pTitleArticle;
+	}
+
+	public void setpTitleArticle(String pTitleArticle) {
+		this.pTitleArticle = pTitleArticle;
+	}
+
 }
