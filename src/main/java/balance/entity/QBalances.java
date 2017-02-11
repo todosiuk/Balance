@@ -1,9 +1,9 @@
-package Entity;
+package balance.entity;
 
 //this class contains data Qguar
 public class QBalances {
 
-	private Integer idQBalance;
+	//private Integer idQBalance;
 
 	// always contain 8 digits
 	private String qArticle;
@@ -14,13 +14,13 @@ public class QBalances {
 	// quantity measured in square meters or pieces
 	private double qQuantity;
 
-	public Integer getIdQBalance() {
+	/*public Integer getIdQBalance() {
 		return idQBalance;
 	}
 
 	public void setIdQBalance(Integer idQBalance) {
 		this.idQBalance = idQBalance;
-	}
+	}**/
 
 	public double getqQuantity() {
 		return qQuantity;

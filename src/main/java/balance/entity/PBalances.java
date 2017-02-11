@@ -1,26 +1,34 @@
-package Entity;
+package balance.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 //this class contains data Potamus
+@Entity(name = "PBalances")
 public class PBalances {
 
-	private Integer idPBalance;
+	// private Integer idPBalance;
 
 	// always contain 8 digits
+	@Id
+	@Column(name = "pArticle")
 	private String pArticle;
 
 	// article title
+	@Column(name = "pTitleArticle")
 	private String pTitleArticle;
 
 	// quantity measured in square meters or pieces
+	@Column(name = "pQuantity")
 	private double pQuantity;
 
-	public Integer getIdPBalance() {
-		return idPBalance;
-	}
-
-	public void setIdPBalance(Integer idPBalance) {
-		this.idPBalance = idPBalance;
-	}
+	/*
+	 * public Integer getIdPBalance() { return idPBalance; }
+	 * 
+	 * public void setIdPBalance(Integer idPBalance) { this.idPBalance =
+	 * idPBalance; }
+	 **/
 
 	public double getpQuantity() {
 		return pQuantity;

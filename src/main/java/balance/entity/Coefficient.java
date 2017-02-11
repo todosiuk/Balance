@@ -1,8 +1,8 @@
-package Entity;
+package balance.entity;
 
 public class Coefficient {
 
-	private Integer idCoefficient;
+	//private Integer idCoefficient;
 
 	// always contain 8 digits
 	private String article;
@@ -13,13 +13,13 @@ public class Coefficient {
 	// coefficient (Length * width)
 	private double coef;
 
-	public Integer getIdCoefficient() {
+	/*public Integer getIdCoefficient() {
 		return idCoefficient;
 	}
 
 	public void setIdCoefficient(Integer idCoefficient) {
 		this.idCoefficient = idCoefficient;
-	}
+	}**/
 
 	public double getCoef() {
 		return coef;
