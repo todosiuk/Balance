@@ -7,6 +7,9 @@ import java.util.List;
 
 import balance.entity.Coefficient;
 
+/** This class read file "Coefficient"
+ * and divides them by the sign ";"*/
+
 public class CSVHelperCoefficient {
 
 	public static List<Coefficient> readCoefficient(String fileName) {
