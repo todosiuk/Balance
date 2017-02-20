@@ -1,25 +1,42 @@
 package balance.entity;
 
-public class Coefficient {
+import java.io.Serializable;
 
-	//private Integer idCoefficient;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="coefficient")
+public class Coefficient implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Integer idCoefficient;
 
 	// always contain 8 digits
+	@Column(name = "article")
 	private String article;
 
 	// title article
+	@Column(name = "title")
 	private String titleArticle;
 
 	// coefficient (Length * width)
-	private double coef;
+	@Column(name = "coef")
+	private Double coef;
 
-	/*public Integer getIdCoefficient() {
+	public Integer getIdCoefficient() {
 		return idCoefficient;
 	}
 
-	public void setIdCoefficient(Integer idCoefficient) {
-		this.idCoefficient = idCoefficient;
-	}**/
+	public void setIdCoefficient(Integer d) {
+		this.idCoefficient = d;
+	}
 
 	public double getCoef() {
 		return coef;
