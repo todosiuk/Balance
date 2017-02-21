@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="coefficient")
+@Table(name = "coefficient")
 public class Coefficient implements Serializable {
 
 	@Id
@@ -60,6 +60,55 @@ public class Coefficient implements Serializable {
 
 	public void setTitleArticle(String titleArticle) {
 		this.titleArticle = titleArticle;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((article == null) ? 0 : article.hashCode());
+		result = prime * result + ((coef == null) ? 0 : coef.hashCode());
+		result = prime * result + ((idCoefficient == null) ? 0 : idCoefficient.hashCode());
+		result = prime * result + ((titleArticle == null) ? 0 : titleArticle.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Coefficient other = (Coefficient) obj;
+		if (article == null) {
+			if (other.article != null)
+				return false;
+		} else if (!article.equals(other.article))
+			return false;
+		if (coef == null) {
+			if (other.coef != null)
+				return false;
+		} else if (!coef.equals(other.coef))
+			return false;
+		if (idCoefficient == null) {
+			if (other.idCoefficient != null)
+				return false;
+		} else if (!idCoefficient.equals(other.idCoefficient))
+			return false;
+		if (titleArticle == null) {
+			if (other.titleArticle != null)
+				return false;
+		} else if (!titleArticle.equals(other.titleArticle))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Coefficient [idCoefficient=" + idCoefficient + ", article=" + article + ", titleArticle=" + titleArticle
+				+ ", coef=" + coef + "]";
 	}
 
 }

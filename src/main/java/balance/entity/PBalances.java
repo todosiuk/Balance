@@ -63,4 +63,52 @@ public class PBalances implements Serializable {
 		this.pTitleArticle = pTitleArticle;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idPBalance == null) ? 0 : idPBalance.hashCode());
+		result = prime * result + ((pArticle == null) ? 0 : pArticle.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(pQuantity);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((pTitleArticle == null) ? 0 : pTitleArticle.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PBalances other = (PBalances) obj;
+		if (idPBalance == null) {
+			if (other.idPBalance != null)
+				return false;
+		} else if (!idPBalance.equals(other.idPBalance))
+			return false;
+		if (pArticle == null) {
+			if (other.pArticle != null)
+				return false;
+		} else if (!pArticle.equals(other.pArticle))
+			return false;
+		if (Double.doubleToLongBits(pQuantity) != Double.doubleToLongBits(other.pQuantity))
+			return false;
+		if (pTitleArticle == null) {
+			if (other.pTitleArticle != null)
+				return false;
+		} else if (!pTitleArticle.equals(other.pTitleArticle))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "PBalances [idPBalance=" + idPBalance + ", pArticle=" + pArticle + ", pTitleArticle=" + pTitleArticle
+				+ ", pQuantity=" + pQuantity + "]";
+	}
+
 }
