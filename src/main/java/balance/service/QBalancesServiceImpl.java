@@ -28,16 +28,28 @@ public class QBalancesServiceImpl implements QBalancesService {
 		List<QBalances> qBalancesList = this.getQBalancesList();
 		List<Coefficient> coefficientList = this.getCoefficientsList();
 		List<QBalancesSquareMeters> list = new ArrayList<QBalancesSquareMeters>();
-
-		for (Coefficient coefficient : coefficientList) {
-			for (QBalances qbalances : qBalancesList) {
-				if (coefficient.getArticle().equals(qbalances.getqArticle())) {
-					QBalancesSquareMeters squareMeters = new QBalancesSquareMeters();
+		QBalancesSquareMeters squareMeters = null;
+		for (QBalances qbalances : qBalancesList) {
+			for (Coefficient coefficient : coefficientList) {
+				if (qbalances.getqArticle().equals(coefficient.getArticle())) {
+					squareMeters = new QBalancesSquareMeters();
 					squareMeters.setArticle(qbalances.getqArticle());
 					squareMeters.setTitleArticle(qbalances.getqTitleArticle());
 					squareMeters.setSquareMeters(qbalances.getqQuantity() * coefficient.getCoef());
 					list.add(squareMeters);
+					break;
 				}
+			}
+			if (squareMeters != null) {
+				break;
+			}
+
+			if (squareMeters == null) {
+				squareMeters = new QBalancesSquareMeters();
+				squareMeters.setArticle(qbalances.getqArticle());
+				squareMeters.setTitleArticle(qbalances.getqTitleArticle());
+				squareMeters.setSquareMeters(0.0);
+				list.add(squareMeters);
 			}
 		}
 		return list;

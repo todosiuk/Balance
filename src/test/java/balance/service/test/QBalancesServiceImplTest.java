@@ -36,7 +36,7 @@ public class QBalancesServiceImplTest {
 	public void testCountingPiecesInSquareMeters() {
 
 		Coefficient coefficient = new Coefficient();
-		coefficient.setArticle("60225487");
+		coefficient.setArticle("60225488");
 		coefficient.setTitleArticle("Roveze");
 		coefficient.setCoef(0.547);
 		coefficientDao.save(coefficient);
@@ -59,7 +59,8 @@ public class QBalancesServiceImplTest {
 
 		List<QBalancesSquareMeters> squareMeters = service.countingPiecesInSquareMeters();
 
-		Assert.assertEquals("60225487", squareMeters.get(0).getArticle());
-		Assert.assertEquals(140.032, squareMeters.get(0).getSquareMeters(), 0);
+		Assert.assertEquals("60225485", squareMeters.get(1).getArticle());
+		Assert.assertEquals(39.68, squareMeters.get(1).getSquareMeters(), 0);
+		//Assert.assertEquals(0, squareMeters.get(1).getSquareMeters(), 0);
 	}
 }
